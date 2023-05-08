@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css.css">
+    <title>Testing out Vue.js</title>
+</head>
+<body>
+
+    <div id="app">
+        <h1>{{ value }}</h1>
+        <button @click="increment">{{ btnTxt }}</button>
+    </div>
+
+    <div id="user">
+        <p>Hello  {{ user }}</p>
+        <input type="text" v-model="username" id="input">
+        <button type="submit" @click="submit">Set username</button>
+    </div>
+
+    <div id="if-statements">
+        <div v-if="page === 0">
+            <p>Hello from page {{ count }}</p>
+        </div>
+        <div v-if="page === 1">
+            <p>Hello from page {{ count }}</p>
+        </div>
+        <div v-if="page === 2">
+            <p>Hello from page {{ count }}</p>
+        </div>
+        <div v-if="page === 3">
+            <p>Hello from page {{ count }}</p>
+        </div>
+        <div v-if="page === 4">
+            <p>Hello from page {{ count }}</p>
+        </div>
+        <button @click="nextPage">
+            Next page
+        </button>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
