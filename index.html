@@ -48,17 +48,14 @@
                 <div class="formshape">
                     <label for="your-name">Name</label>
                     <input type="text" name="your-name" id="your-name" required placeholder="Full Name">
-                    <p class="error-message"></p>
                     <label for="your-email">Email</label>
                     <input type="email" name="your-email" id="your-email" required placeholder="your@email.com">
-                    <p class="error-message"></p>
                     <label for="your-subject">Subject</label>
                     <input type="text" name="your-subject" id="your-subject" required placeholder="Subject">
-                    <p class="error-message"></p>
-                    <label for="your-message">What to you want to say to Loppa?</label>
-                    <textarea @keyup="getLength" v-model="message"></textarea>
-                    <p class="error-message"></p>
-                    <p class="word-count"><span class="counter"></span> / <span class="max-val"></span></p>
+                    <label for="your-message">What to you want to say?</label>
+                    <textarea name="your-message" id="your-message" cols="30" rows="10" required @keyup="getLength"
+                            placeholder="Your message here, max 500 characters"></textarea>
+                    <p class="word-count"><span class="counter">0</span> / <span class="max-val"></span></p>
             </fieldset>
             </div>
             <button class="submit" type="submit">Send message</button>

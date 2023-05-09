@@ -49,7 +49,7 @@ createApp({
     }
 }).mount("#if-statements")
 
-const textAreaInp = document.querySelector("#your-message");
+
 
 createApp({
     data(){
@@ -60,8 +60,18 @@ createApp({
     },
     methods: {
         getLength(){
-            // let msgLength = textAreaInp.value;
+            const textAreaInp = document.querySelector("#your-message");
+            const counterSpan = document.querySelector(".counter");
+            const msgLength = textAreaInp.value.length;
             console.dir(textAreaInp)
+            console.log(msgLength);
+            counterSpan.innerText = msgLength;
+        },
+        setMaxVal(){
+            console.log("running");
+            const maxValBox = document.querySelector(".max-val");
+            console.dir(maxValBox);
+            // maxValBox.innerText = this.maxVal;
         }
-    }
-}).mount("#contact-form")
+    }.mounted(this.setMaxVal())
+}).mount("#contact-form");
