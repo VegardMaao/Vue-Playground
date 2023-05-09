@@ -48,3 +48,20 @@ createApp({
         }
     }
 }).mount("#if-statements")
+
+const textAreaInp = document.querySelector("#your-message");
+
+createApp({
+    data(){
+        return {
+            minVal: 25,
+            maxVal: 500
+        }
+    },
+    methods: {
+        getLength(){
+            // let msgLength = textAreaInp.value;
+            console.dir(textAreaInp)
+        }
+    }
+}).mount("#contact-form")

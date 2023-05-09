@@ -1,3 +1,37 @@
 div{
     margin: 20px;
+    width: 400px;
+}
+
+input, textarea{
+    max-width: fit-content;
+}
+
+.contact-us > div {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+form {
+    border: 2px solid black;
+    border-radius: 15px;
+}
+
+fieldset{
+    border: none;
+}
+
+textarea{
+    margin-top: 5px;
+}
+
+.contact-us{
+    max-width: 550px;
+}
+
+.formshape{
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    justify-content: space-around;
 }
