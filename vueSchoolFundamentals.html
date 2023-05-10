@@ -19,7 +19,7 @@
             placeholder="Add an item"
             v-model="newItem"
           />
-          <label for="priority">
+          <label for="priority" id="important-checkbox">
             Important
             <input type="checkbox" v-model="newItemHighPri" />
           </label>
@@ -76,6 +76,7 @@
             saveItem(){
                 this.groceries.push({id: this.groceries.length + 1, label: this.newItem, important: this.newItemHighPri});
                 this.newItem = "";
+                this.newItemHighPri = false;
             }
         },
       }).mount(".shopping-list");
