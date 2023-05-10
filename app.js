@@ -54,25 +54,38 @@ createApp({
 createApp({
     data(){
         return {
+            count: 0,
             minVal: 25,
-            maxVal: 500
+            maxVal: 500,
+            name: "",
+            email: "",
+            subject: "",
+            message: ""
         }
     },
     methods: {
+        prepTextArea(){
+            const textAreaInp = document.querySelector("#your-message");
+            textAreaInp.placeholder = `Your message here, max ${this.maxVal} characters`;
+            textAreaInp.minLength = this.minVal;
+            textAreaInp.maxLength = this.maxVal;
+
+            const maxValBox = document.querySelector(".max-val");
+            maxValBox.innerText = this.maxVal;
+        },
         getLength(){
             const textAreaInp = document.querySelector("#your-message");
             const counterSpan = document.querySelector(".counter");
             const msgLength = textAreaInp.value.length;
-            console.dir(textAreaInp)
-            console.log(msgLength);
             counterSpan.innerText = msgLength;
+            this.count = msgLength;
         },
-        setMaxVal(){
-            console.log("running");
-            const maxValBox = document.querySelector(".max-val");
-            console.dir(maxValBox);
-            // maxValBox.innerText = this.maxVal;
+        giveUserFeedback(){
+            const formBox = document.querySelector("form");
+            formBox.innerHTML = `Thank you ${this.name} for sending in a message! You will receive feedback to ${this.email} soon.`;
         }
     },
-    
+    mounted(){
+        this.prepTextArea();
+    }
 }).mount("#contact-form");

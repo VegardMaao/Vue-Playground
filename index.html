@@ -43,22 +43,24 @@
 
 
     <div id="contact-form">
-        <form action="submit">
+        <form action="" @submit.prevent.self="giveUserFeedback()">
             <fieldset>
                 <div class="formshape">
                     <label for="your-name">Name</label>
-                    <input type="text" name="your-name" id="your-name" required placeholder="Full Name">
+                    <input type="text" name="your-name" id="your-name" v-model="name" required placeholder="Full Name">
                     <label for="your-email">Email</label>
-                    <input type="email" name="your-email" id="your-email" required placeholder="your@email.com">
+                    <input type="email" name="your-email" id="your-email" v-model="email" required placeholder="your@email.com">
                     <label for="your-subject">Subject</label>
-                    <input type="text" name="your-subject" id="your-subject" required placeholder="Subject">
+                    <input type="text" name="your-subject" id="your-subject" v-model="subject" required placeholder="Subject">
                     <label for="your-message">What to you want to say?</label>
-                    <textarea name="your-message" id="your-message" cols="30" rows="10" required @keyup="getLength"
-                            placeholder="Your message here, max 500 characters"></textarea>
-                    <p class="word-count"><span class="counter">0</span> / <span class="max-val"></span></p>
+                    <textarea name="your-message" id="your-message" cols="30" rows="10" required @keyup="getLength" v-model="message">
+
+                    </textarea>
+                    <p class="word-count"><span v-if="count < minVal" class="counter invalid">0</span> <span v-else class="counter">0</span>  
+                        / <span class="max-val"></span></p>
+                    <button class="submit" type="submit">Send message</button>
             </fieldset>
             </div>
-            <button class="submit" type="submit">Send message</button>
         </form>
     </div>
 

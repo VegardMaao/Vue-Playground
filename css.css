@@ -27,6 +27,10 @@ input, textarea{
     max-width: fit-content;
 }
 
+.invalid{
+    color: red;
+}
+
 .important{
     font-weight: 600;
     text-decoration: underline;
