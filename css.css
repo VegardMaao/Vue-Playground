@@ -25,6 +25,11 @@ input, textarea{
     max-width: fit-content;
 }
 
+.important{
+    font-weight: 600;
+    text-decoration: underline;
+}
+
 .contact-us > div {
     margin-top: 5px;
     margin-bottom: 15px;
