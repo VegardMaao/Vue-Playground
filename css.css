@@ -4,9 +4,10 @@ https://coolors.co/palette/131515-2b2c28-339989-7de2d1-fffafb */
 body{
     background-color: #7DE2D1;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     height: 100vh;
-    justify-content: center;
+    justify-content: flex-start;
+    flex-direction: column;
 }
 
 div{
@@ -15,6 +16,7 @@ div{
     width: 400px;
     border-radius: 15px;
     padding: 20px;
+    max-width: fit-content;
 }
 
 li{
@@ -28,6 +30,10 @@ input, textarea{
 .important{
     font-weight: 600;
     text-decoration: underline;
+}
+
+.shopping-list{
+    margin: auto;
 }
 
 .contact-us > div {
