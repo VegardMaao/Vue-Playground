@@ -17,6 +17,10 @@ div{
     padding: 20px;
 }
 
+li{
+    list-style-type: none;
+}
+
 input, textarea{
     max-width: fit-content;
 }
