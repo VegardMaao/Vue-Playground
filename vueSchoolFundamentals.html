@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,30 +8,57 @@
     <link rel="stylesheet" href="css.css">
     <title>Document</title>
 </head>
+
 <body>
-    
+
     <div class="shopping-list">
         <h1>{{ header || `Welcome to the party zone!` }}</h1>
+        <form class="add-item-form">
+            <fieldset>
+                <input @keydown.enter.prevent.self="groceries.push({id: groceries.length + 1, label: newItem })" type="text" placeholder="Add an item" v-model="newItem">
+                <label for="priority">
+                    Important
+                    <input type="checkbox" v-model="newItemHighPri">
+                </label>
+            </fieldset>
+            <p>{{newItem}}<span v-if="newItemHighPri === true">, important!</span></p>
+            <button class="btn btn-primary" @click.prevent.self="groceries.push({id: groceries.length + 1, label: newItem })">
+                Add to list
+            </button>
+        </form>
         <ul>
             <li v-for="(item,  i) in groceries" :key="item.id"> {{ i + 1 }}; {{ item.label }} </li>
         </ul>
     </div>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- Vue script below -->
     <script>
         const shoppingList = Vue.createApp({
-            data(){
-                return {
-                    header: "Shopping List App",
-                    groceries: [
-                        {id: 1, label:'Bread'},
-                        {id: 2, label:'Bananas'},
-                        {id: 3, label:'Beer'}
-                    ]
+                data() {
+                    return {
+                        header: "Shopping List App",
+                        newItem: "",
+                        newItemHighPri: false,
+                        groceries: [{
+                                id: 1,
+                                label: 'Bread'
+                            },
+                            {
+                                id: 2,
+                                label: 'Bananas'
+                            },
+                            {
+                                id: 3,
+                                label: 'Beer'
+                            }
+                        ]
+                    }
                 }
-            }
-        })
-        .mount('.shopping-list')
+            })
+            .mount('.shopping-list')
     </script>
 </body>
+
 </html>

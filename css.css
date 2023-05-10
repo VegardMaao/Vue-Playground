@@ -33,10 +33,18 @@ input, textarea{
 form {
     border: 2px solid black;
     border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 fieldset{
     border: none;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    padding: 0px;
 }
 
 textarea{
