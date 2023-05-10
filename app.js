@@ -73,5 +73,6 @@ createApp({
             console.dir(maxValBox);
             // maxValBox.innerText = this.maxVal;
         }
-    }.mounted(this.setMaxVal())
+    },
+    
 }).mount("#contact-form");
