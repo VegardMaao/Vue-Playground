@@ -4,7 +4,6 @@ https://coolors.co/palette/131515-2b2c28-339989-7de2d1-fffafb */
 body{
     background-color: #7DE2D1;
     display: flex;
-    /* align-items: center; */
     height: 100vh;
     justify-content: flex-start;
     flex-direction: column;
@@ -19,12 +18,20 @@ div{
     max-width: fit-content;
 }
 
+.header{
+    margin: 0px;
+}
+
 li{
     list-style-type: none;
 }
 
 input, textarea{
     max-width: fit-content;
+}
+
+.btn-primary{
+    margin-top: 10px;
 }
 
 .invalid{
@@ -38,6 +45,7 @@ input, textarea{
 
 .shopping-list{
     margin: auto;
+    max-width: 100%;
 }
 
 .contact-us > div {
