@@ -8,6 +8,11 @@
     <title>Testing out Vue.js</title>
 </head>
 <body>
+    <nav class="navigation">
+        <ul>
+            <li v-for="(navItem, i) in navigationItems"><a href='{{navItem.link}}'>{{ navItem.name }}</a></li>
+        </ul>
+    </nav>
 
     <div id="app">
         <h1>{{ value }}</h1>
@@ -15,7 +20,7 @@
     </div>
 
     <div id="user">
-        <p>Hello  {{ user }}</p>
+        <p>Hello {{ user }}</p>
         <input type="text" v-model="username" id="input">
         <button type="submit" @click="submit">Set username</button>
     </div>
@@ -56,7 +61,7 @@
                     <textarea name="your-message" id="your-message" cols="30" rows="10" required @keyup="getLength" v-model="message">
 
                     </textarea>
-                    <p class="word-count"><span v-if="count < minVal" class="counter invalid">0</span> <span v-else class="counter">0</span>  
+                    <p class="word-count"><span v-if="count < minVal" class="counter invalid">{{count}}</span> <span v-else class="counter">{{count}}</span>  
                         / <span class="max-val"></span></p>
                     <button class="submit" type="submit">Send message</button>
             </fieldset>
@@ -65,6 +70,7 @@
     </div>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="navigation.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
