@@ -8,9 +8,9 @@
     <title>Testing out Vue.js</title>
 </head>
 <body>
-    <nav class="navigation">
-        <ul>
-            <li v-for="(navItem, i) in navigationItems"><a href='{{navItem.link}}'>{{ navItem.name }}</a></li>
+    <nav>
+        <ul class="navigation">
+            <li v-for="navItem in navigationItems"><a v-bind:href="navItem.link">{{ navItem.name }}</a></li>
         </ul>
     </nav>
 
