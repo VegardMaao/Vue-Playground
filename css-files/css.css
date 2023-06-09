@@ -1,0 +1,246 @@
+@import url(exports/variables.css);
+
+/* Color palette:
+https://coolors.co/palette/131515-2b2c28-339989-7de2d1-fffafb */
+
+body{
+    background-color: var(--primary-color);
+    display: flex;
+    height: 100vh;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+div{
+    background-color: #FFFAFB;
+    margin: 20px;
+    width: 400px;
+    border-radius: 15px;
+    padding: 20px;
+    max-width: fit-content;
+}
+
+.header{
+    margin: 0px;
+}
+
+li{
+    list-style-type: none;
+}
+
+
+/* STYLING THE HEADER */ 
+
+header{
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    background-color: var(--accent-color);
+    border-bottom: 2px solid var(--text-color);
+}
+
+header > a{
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    max-width: 50px;
+}
+
+.navigation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: flex-end;
+    justify-content: space-evenly;
+    margin: 0px;
+    background-color: var(--accent-color);
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px solid var(--text-color);
+    border-top: none;
+    padding: 50px 0px 0px 0px;
+}
+
+.navItem > li{
+    list-style: none;
+    margin: 10px 25px;
+}
+
+.navItem li:nth-of-type(3){
+    margin-bottom: 50px;
+}
+
+.navItem > a{
+    font-family: var(--header-fonts);
+    font-size: 1.5rem;
+    text-decoration: underline;
+    padding: 0px 10px;
+}
+
+.sticky{
+    position: sticky;
+    top: 0px;
+}
+
+
+/* Hamburger menu */
+
+nav{
+    position: absolute;
+    width: 100%;
+    height: 404px;
+    top: -404px;
+    transition: 500ms;
+}
+
+.menubox{
+    color: var(--text-color);
+}
+
+#hamburger_menu{
+    display: none;
+}
+
+#hamburger_menu:checked ~ nav{
+    top: 0px;
+}
+
+#menu_icon{
+    font-size: 2rem;
+    display: block;
+    position: absolute;
+    top: 15%;
+    right: 2.5%;
+    z-index: 1;
+    padding: 0rem 1.5rem;
+}
+
+#menu_icon:hover{
+    cursor: pointer;
+    position: absolute;
+}
+
+
+input, textarea{
+    max-width: fit-content;
+}
+
+.btn-primary{
+    margin-top: 10px;
+}
+
+.invalid{
+    color: red;
+}
+
+.important{
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.shopping-list{
+    margin: auto;
+    max-width: 100%;
+}
+
+.contact-us > div {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+form {
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+fieldset{
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    padding: 0px;
+}
+
+textarea{
+    margin-top: 5px;
+}
+
+.contact-us{
+    max-width: 550px;
+}
+
+.formshape{
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    justify-content: space-around;
+}
+
+
+
+
+
+
+@media (min-width: 600px) {
+    header{
+        height: 70px;
+        align-items: center;
+    }
+
+    header > a{
+        padding: 10px;
+        height: 60px;
+        max-width: 100px;
+    }
+
+    nav{
+        display: flex;
+        align-items: center;
+        position: absolute;
+        z-index: 0;
+        top: 0px;
+        width: 100%;
+    }
+
+    .navigation{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin: 0px auto;
+        padding: 0px;
+        border: none;
+    }
+    
+    .navigation > li{
+        margin: 0px;
+    }
+ 
+    .navigation > li:nth-of-type(3){
+    margin-bottom: 0px;
+    }
+
+    .navigation > li > a{
+        text-decoration: none;
+        font-size: 2rem;
+    }
+    #hamburger_menu:checked ~ nav {
+        display: flex;
+        align-items: center;  
+    }
+    #menu_icon{
+        display: none;
+    }
+    .offset{
+        top: -70px;
+    }    
+    .infotext{
+        width: 90%;
+    }
+    form{
+        padding: 15px;
+    }
+}
