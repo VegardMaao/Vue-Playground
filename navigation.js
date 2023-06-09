@@ -5,10 +5,10 @@ const navigation = Vue.createApp({
         name: "Playground",
         link: "index.html",
       },{
-        name: "Vue School Foundations",
+        name: "Vue School",
         link: "vueSchoolFundamentals.html"
       },{
-        name: "Portfolio Page",
+        name: "Portfolio",
         link: "portfolio.html"
       }]
     };

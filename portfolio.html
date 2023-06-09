@@ -24,10 +24,58 @@
         </nav>
     </header>
 
+    <section class="about-me">
+        <h1>Vegard Maaø</h1>
+        <p>I am a front end dev from Trondheim</p>
+    </section>
 
+    <section class="portfolio-container">
+        <div class="portfolio-item" v-for="portfolioItem in portfolioItems">
+            <a :href="portfolioItem.siteLink" target="_blank"><h3>{{ portfolioItem.name }}</h3></a>
+            <a :href="portfolioItem.siteLink" target="_blank"><img :src="portfolioItem.imgUrl" :alt="portfolioItem.name" class="thumbnail"></a>
+            <p>{{ portfolioItem.description }}</p>
+            <div class="portfolio-links">
+                <p><a :href="portfolioItem.gitHubLink" target="_blank">GitHub</a></p>
+                <p><a :href="portfolioItem.siteLink" target="_blank">Live Site</a></p>
+            </div>
+        </div>
+    </section>
 
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="navigation.js"></script>
+
+    <script>
+        const portfolioCode = Vue.createApp({
+            data(){
+                return{
+                    portfolioItems: [{
+                            name: "Loppas Big Blog",
+                            siteLink: "https://loppasbigblog.netlify.app/",
+                            gitHubLink: "https://github.com/Noroff-FEU-Assignments/project-exam-1-VegardMaao",
+                            description: "A blog about my cat, Loppa",
+                            imgUrl: "https://vegardmaao-portfolio.netlify.app/images/loppasbigblog.jpg"
+                        },
+                        {
+                            name: "Cross-Course Project",
+                            siteLink: "https://ecstatic-jackson-e63b3f.netlify.app/",
+                            gitHubLink: "https://github.com/VegardMaao/html-and-css-CA_Vegard-Maaoe",
+                            description: "A website made across multiple courses",
+                            imgUrl: "https://vegardmaao-portfolio.netlify.app/images/cross-course.jpg" 
+                        },
+                        {
+                            name: "Semester Project Spring 22",
+                            siteLink: "https://comscimuseum.netlify.app/",
+                            gitHubLink: "https://github.com/VegardMaao/semester_project_spring22_vegard_maao",
+                            description: "A site for a childrens science museum",
+                            imgUrl: "https://vegardmaao-portfolio.netlify.app/images/comscimuseum.jpg"
+                        }]
+                }
+            },
+            methods: {
+
+            }
+        }).mount(".portfolio-container")
+    </script>
 </body>
 </html>
