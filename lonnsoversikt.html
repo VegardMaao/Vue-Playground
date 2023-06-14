@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+      src="https://kit.fontawesome.com/efafec28fb.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css-files/css.css"/>
+    <title>Document</title>
+</head>
+<body>
+    <header class="sticky">
+        <label for="hamburger_menu" class="menubox"
+          ><i class="fas fa-bars" id="menu_icon"></i
+        ></label>
+        <input type="checkbox" name="hamburger_menu" id="hamburger_menu" />
+        <nav>
+            <ul class="navigation">
+                <li class="navItem" v-for="navItem in navigationItems"><a v-bind:href="navItem.link">{{ navItem.name }}</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="lonnsoversikt">
+
+    </section>
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="js/navigation.js"></script>
+
+    <script>
+        const lonnsoversikt = Vue.createApp({
+            data(){
+                return{
+                    
+                }
+            }
+        })
+    </script>
+</body>
+</html>

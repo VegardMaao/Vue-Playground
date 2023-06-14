@@ -10,6 +10,9 @@ const navigation = Vue.createApp({
       },{
         name: "Portfolio",
         link: "portfolio.html"
+      },{
+        name: "Lønnsoversikt Utviklere",
+        link: "lonnsoversikt.html"
       }]
     };
   }
